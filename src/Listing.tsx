@@ -2,7 +2,6 @@ import type {ListingItemData} from './App'
 
 
 function Listing({items}:ListingItemData[]=[]) {
-    console.log(items)
     return (
         <div className='item-list'>
             {items.map(listingItemData => (

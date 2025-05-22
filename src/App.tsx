@@ -1,5 +1,5 @@
 import './App.css'
-import listingData from './assets/data/etsy.json'
+import listingData from './assets/data/etsy.json?raw'
 import Listing from './Listing'
 
 // interface ListingImage {
@@ -89,8 +89,9 @@ interface ListingItemData {
 
 
 function App() {
-  const listingItems = listingData
-  let FilteredLisingItems:ListingItemData[]  = listingItems.filter(
+  const test = JSON.parse(listingData)
+
+  const FilteredLisingItems:ListingItemData[]  = test.filter(
     listingItemData => listingItemData.listing_id !== undefined &&
     listingItemData.url !== undefined &&
     listingItemData.MainImage !== undefined &&
